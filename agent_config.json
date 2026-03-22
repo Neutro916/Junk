@@ -1,0 +1,204 @@
+{
+  "version": "2026.03.21-free",
+  "description": "33-Agent configuration optimized for free API models",
+  "system_overview": {
+    "total_agents": 33,
+    "free_models_only": true,
+    "local_first": true,
+    "offline_capable": true
+  },
+  "agent_groups": {
+    "predictors": {
+      "count": 8,
+      "purpose": "Swarm intelligence prediction",
+      "models": ["ollama:llama2", "ollama:mistral", "ollama:qwen2.5"],
+      "free_tier": true
+    },
+    "executors": {
+      "count": 6,
+      "purpose": "Code execution and automation",
+      "models": ["ollama:codellama", "ollama:starcoder"],
+      "free_tier": true
+    },
+    "validators": {
+      "count": 5,
+      "purpose": "Cross-validation and consensus",
+      "models": ["deepseek-free", "gemini-free"],
+      "free_tier": true
+    },
+    "observers": {
+      "count": 4,
+      "purpose": "System monitoring and logging",
+      "models": ["ollama:tinyllama"],
+      "free_tier": true,
+      "low_resource": true
+    },
+    "specialists": {
+      "count": 10,
+      "purpose": "Domain-specific tasks",
+      "agents": [
+        {
+          "name": "MFish_Predictor",
+          "model": "ollama:qwen2.5",
+          "purpose": "Swarm intelligence predictions",
+          "source": "J:/MFish-great (if cloned)"
+        },
+        {
+          "name": "CONDUCTOR_RAG",
+          "model": "ollama:nomic-embed-text + ollama:llama2",
+          "purpose": "Multi-LLM RAG framework",
+          "source": "J:/CONDUCTOR"
+        },
+        {
+          "name": "NEMO_Ralph",
+          "model": "ollama:llava (vision) + ollama:llama2",
+          "purpose": "Multimodal formation",
+          "source": "J:/.skills/nemo-ralph"
+        },
+        {
+          "name": "USB_Skill_Injector",
+          "model": "ollama:tinyllama",
+          "purpose": "Hardware skill detection",
+          "free_tier": true
+        },
+        {
+          "name": "Math_Reuse_Library",
+          "model": "ollama:codellama",
+          "purpose": "3-6-9 vortex mathematics",
+          "free_tier": true
+        },
+        {
+          "name": "CLI_Orchestrator",
+          "model": "ollama:llama2",
+          "purpose": "Command line interface",
+          "free_tier": true
+        },
+        {
+          "name": "Graph_Visualizer",
+          "model": "ollama:llava",
+          "purpose": "3D skill tree visualization",
+          "free_tier": true
+        },
+        {
+          "name": "Drive_Mapper",
+          "model": "ollama:tinyllama",
+          "purpose": "J:/K:/L:/ unified mapping",
+          "free_tier": true
+        },
+        {
+          "name": "Consensus_Scorer",
+          "model": "deepseek-free",
+          "purpose": "Agent consensus calculation",
+          "free_tier": true
+        },
+        {
+          "name": "Event_Bus_Manager",
+          "model": "ollama:tinyllama",
+          "purpose": "Central event routing",
+          "free_tier": true
+        }
+      ]
+    }
+  },
+  "model_providers": {
+    "ollama_local": {
+      "cost": "free",
+      "setup": "Local installation",
+      "models": ["llama2", "mistral", "codellama", "qwen2.5", "tinyllama", "llava", "nomic-embed-text"],
+      "notes": "Runs completely offline, no API key needed, requires GPU/RAM",
+      "type": "local"
+    },
+    "api_free_tier": {
+      "cost": "free tier with registration",
+      "requires": "API key creation",
+      "providers": [
+        {
+          "name": "deepseek",
+          "url": "https://platform.deepseek.com/api_keys",
+          "rate_limit": "Requests per day",
+          "notes": "Free tier available after registration"
+        },
+        {
+          "name": "gemini",
+          "url": "https://aistudio.google.com/apikey",
+          "rate_limit": "60 requests per minute",
+          "notes": "Free tier generous for personal use"
+        },
+        {
+          "name": "kimi",
+          "url": "https://platform.moonshot.cn/console/api-keys",
+          "rate_limit": "Limited free tier",
+          "notes": "Free credits sometimes available"
+        }
+      ],
+      "type": "api_with_key"
+    },
+    "openrouter": {
+      "cost": "pay-per-use or free credits",
+      "setup": "API key from openrouter.ai",
+      "models": ["deepseek/deepseek-r1:free", "google/gemini-flash-1.5", "mistralai/mistral-7b"],
+      "notes": "Some free models available via openrouter routing",
+      "type": "aggregator"
+    }
+  },
+  "resource_optimization": {
+    "alienware_24gb": {
+      "max_concurrent_agents": 15,
+      "recommended_models": ["tinyllama", "llama2:7b", "qwen2.5:7b"],
+      "memory_per_agent_mb": 512,
+      "total_memory_usage_gb": 8
+    },
+    "uconsole_arm": {
+      "max_concurrent_agents": 8,
+      "recommended_models": ["tinyllama", "phi2"],
+      "memory_per_agent_mb": 256,
+      "total_memory_usage_gb": 2
+    }
+  },
+  "usb_skill_mapping": {
+    "auto_detect": true,
+    "skill_patterns": {
+      "RESEARCH": "#signal-intelligence",
+      "AI_MODELS": "#ai-training",
+      "CODE": "#development",
+      "ESP32": "#hardware-security",
+      "SDR": "#radio-frequency",
+      "DATA": "#data-analysis",
+      "PEMF": "#frequency-research"
+    },
+    "injection_method": "symlink + config_update"
+  },
+  "key_mappings": {
+    "5_key_set": {
+      "1": "toggle_agent_view",
+      "2": "toggle_skill_tree",
+      "3": "toggle_consensus_display",
+      "4": "emergency_stop_all",
+      "5": "force_consensus_recalculation"
+    },
+    "13_key_set": {
+      "1-5": "agent_1_to_5_focus",
+      "6-10": "skill_1_to_5_activate",
+      "11": "usb_rescan",
+      "12": "health_report",
+      "13": "system_snapshot"
+    }
+  },
+  "drive_integration": {
+    "j_drive": {
+      "path": "J:/",
+      "role": "execution_engine",
+      "components": ["CONDUCTOR", "nemo-workspace", ".skills", "Conduit-UI-JET-v12"]
+    },
+    "k_drive": {
+      "path": "K:/",
+      "role": "logic_dna",
+      "components": [".obsidian", "dev-tools", "opencode-main"]
+    },
+    "l_drive": {
+      "path": "L:/",
+      "role": "swarm_memory",
+      "components": ["agent_memory", "prediction_cache", "skill_registry"]
+    }
+  }
+}
